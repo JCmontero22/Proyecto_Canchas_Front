@@ -1,0 +1,15 @@
+
+<div>
+    <div class="row" *ngIf="listadoCanchas">
+      <div class="col-md-3 mb-5" style="cursor: pointer;" *ngFor="let canchas of listadoCanchas.data">
+          <div class="card" (click)="abrirSeparar(canchas.id_cancha)">
+              <div class="card-body">
+                  <div class="card-title text-center text-uppercase" style="font-size: 1.6rem;">{{ canchas.nombre_cancha }}</div>
+                  <div class="contentImagen mt-2">
+                      <img [src]="canchas.logo_cancha" alt="">
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponentComponent } from './components/header-component/header-component.component';
+import { RouterLink } from '@angular/router';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 
 
@@ -9,10 +11,12 @@ import { HeaderComponentComponent } from './components/header-component/header-c
       HeaderComponentComponent
   ],
   imports: [
-      CommonModule
+      CommonModule,
+      RouterLink
   ],
   exports:[
-      HeaderComponentComponent
+      HeaderComponentComponent,
+      FullCalendarModule
   ]
 })
 export class MainModule { }

@@ -1,0 +1,15 @@
+
+    <div *ngIf="dataPublicaciones">
+        <div class="col-md-4 mb-5" style="cursor: pointer;" *ngFor="let publicacion of dataPublicaciones.data">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-uppercase">{{ publicacion.titulo_publicacion }}</h5>
+                    <div class="contentImagen mt-4">
+                        <img [src]="publicacion.imagen_publicacion" alt="">
+                    </div>
+                    <p class="card-text mt-4">{{ publicacion.descripcion_publicacion }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
