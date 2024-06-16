@@ -5,6 +5,8 @@ import { ListadoNegociosComponent } from './components/listado-negocios/listado-
 import { negociosRouting } from './negocios-routing.module';
 import { CanchasComponent } from './page/canchas/canchas.component';
 import { ListadoCanchasNegocioComponent } from './components/listado-canchas-negocio/listado-canchas-negocio.component';
+import { SepararCanchasComponent } from './page/separar-canchas/separar-canchas.component';
+import { ComponentsModule } from '../components/components.module';
 
 
 
@@ -13,11 +15,13 @@ import { ListadoCanchasNegocioComponent } from './components/listado-canchas-neg
     NegociosComponent,
     ListadoNegociosComponent,
     CanchasComponent,
-    ListadoCanchasNegocioComponent
+    ListadoCanchasNegocioComponent,
+    SepararCanchasComponent,
   ],
   imports: [
     CommonModule,
-    negociosRouting
+    negociosRouting,
+    ComponentsModule
   ]
 })
 export class NegociosModule { }

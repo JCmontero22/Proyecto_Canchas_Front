@@ -7,18 +7,24 @@ import { MainModule } from './main/main.module';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CalendarioComponent } from './components/calendario/calendario.component';
+import { NegociosModule } from './negocios/negocios.module';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MainModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FullCalendarModule,
+    NegociosModule
 
   ],
   providers: [],

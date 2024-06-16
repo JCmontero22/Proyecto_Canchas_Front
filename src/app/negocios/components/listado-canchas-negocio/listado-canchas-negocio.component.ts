@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
       public canchas!: GetAllCanchasNegocios;
       public idNegocio: number = 0;
 
-      constructor(private httCanchas: CanchasService, private route:Router){
+      constructor(private httCanchas: CanchasService, private route:Router, private route2:Router){
           const dataRuta = route.getCurrentNavigation();
           if (dataRuta?.extras?.state?.['idNegocio']) {
               this.idNegocio = dataRuta.extras.state['idNegocio'];
@@ -37,7 +37,7 @@ import { Router } from '@angular/router';
           });
       }
 
-      calendarioCancha():void{
-          alert('hola');
+      calendarioCancha(idCancha: number):void{
+          this.route2.navigate(['negocios/calendarioCanchas'], {state: {'idCancha': idCancha}});
       }
   }
