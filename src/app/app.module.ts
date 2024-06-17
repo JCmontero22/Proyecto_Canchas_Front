@@ -5,11 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainModule } from './main/main.module';
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
-import { CalendarioComponent } from './components/calendario/calendario.component';
+import { CalendarioComponent } from './common/components/calendario/calendario.component';
 import { NegociosModule } from './negocios/negocios.module';
+import { LoginModule } from './login/login.module';
 
 
 
@@ -24,7 +25,10 @@ import { NegociosModule } from './negocios/negocios.module';
     HttpClientModule,
     FormsModule,
     FullCalendarModule,
-    NegociosModule
+    NegociosModule,
+    LoginModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

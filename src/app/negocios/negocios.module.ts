@@ -6,7 +6,7 @@ import { negociosRouting } from './negocios-routing.module';
 import { CanchasComponent } from './page/canchas/canchas.component';
 import { ListadoCanchasNegocioComponent } from './components/listado-canchas-negocio/listado-canchas-negocio.component';
 import { SepararCanchasComponent } from './page/separar-canchas/separar-canchas.component';
-import { ComponentsModule } from '../components/components.module';
+import { ComponentsModule } from '../common/components/components.module';
 
 
 
