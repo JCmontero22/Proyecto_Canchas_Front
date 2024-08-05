@@ -1,0 +1,21 @@
+
+    <div class="container mt-4">
+
+        <div class="contentLogin" *ngIf="login == false; else contentPage">
+            <router-outlet></router-outlet>
+        </div>
+
+        <ng-template #contentPage>
+            <div class="contentPage">
+                <div>
+                    <app-header-component></app-header-component>
+                </div>
+                <div class="contentBody">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </ng-template>
+
+
+    </div>
+

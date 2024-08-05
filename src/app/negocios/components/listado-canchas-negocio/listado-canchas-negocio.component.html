@@ -1,0 +1,18 @@
+
+<div>
+    <div class="row" *ngIf="canchas">
+        <div class="col-md-3" *ngFor="let canchas of canchas.data">
+            <div class="card" (click)="calendarioCancha(canchas.id_cancha)" style="cursor: pointer;">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-3">{{ canchas.nombre_cancha }}</h5>
+
+                    <div class="contentImagen">
+                        <img [src]="canchas.imagen_cancha" alt="">
+                    </div>
+
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

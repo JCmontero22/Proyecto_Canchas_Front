@@ -1,0 +1,19 @@
+
+<div>
+    <h2 class="text-center mb-5">NEGOCIOS NEIVA</h2>
+    <div class="row" *ngIf="listadoNegocios">
+        <div class="col-md-3" style="cursor: pointer;" *ngFor="let negocio of listadoNegocios.data">
+            <div class="card" (click)="canchas(negocio.id_negocio)">
+                <div class="car-body">
+                    <div class="card-tittle text-center text-uppercase" style="font-size: 1.6 rem;">{{ negocio.nombre_negocio }}</div>
+                    <div class="contentImagen mt-2">
+                        <img [src]="negocio.logo_negocio" alt="">
+                    </div>
+                    <div class="card-text mt-2 text-center">
+                        <i class="fa-solid fa-mobile-screen-button"></i>: {{ negocio.telfono_negocio }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

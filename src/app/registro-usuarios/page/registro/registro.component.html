@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="contentRegistroFormulario">
+        <h1 class="text-center">Registro de usuario</h1>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <form [formGroup]="dataForm" (ngSubmit)="validacionYRegistro()">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="" class="form-label">* Nombre Completo:</label>
+                            <input type="text" class="form-control" name="" id="" formControlName="nombreUsuario">
+
+                            <div class="invalid-feedback" style="display: block;" *ngIf="dataForm.get('nombreUsuario')?.touched && dataForm.get('nombreUsuario')?.errors?.['required']">
+                                Campo requerido
+                            </div>
+
+                            <div class="invalid-feedback" style="display: block;" *ngIf=" dataForm.get('nombreUsuario')?.errors?.['pattern']">
+                                Solo se aceptan letras
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="" class="form-label">* Telefono:</label>
+                            <input type="text" class="form-control" name="" id="" formControlName="telefonoUsuario">
+
+                            <div class="invalid-feedback" style="display: block;" *ngIf="dataForm.get('telefonoUsuario')?.touched && dataForm.get('telefonoUsuario')?.errors?.['required']">
+                                Campo requerido
+                            </div>
+
+                            <div class="invalid-feedback" style="display: block;" *ngIf="dataForm.get('telefonoUsuario')?.touched && dataForm.get('telefonoUsuario')?.errors?.['validarSoloNumeros']">
+                                Solo se aceptan numeros
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mt-4">
+                            <label for="" class="form-label">* Email</label>
+                            <input type="email" name="" id="" class="form-control" formControlName="emailUsuario">
+
+                            <div class="invalid-feedback" style="display: block;" *ngIf="dataForm.get('emailUsuario')?.touched && dataForm.get('emailUsuario')?.errors?.['required']">
+                                Campo requerido
+                            </div>
+
+                            <div class="invalid-feedback" style="display: block;" *ngIf="dataForm.get('emailUsuario')?.errors?.['email']">
+                                Debe poner un email valido
+                          </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <label for="" class="form-label">* Contraseña</label>
+                            <input type="password" name="" id="" class="form-control" formControlName="passUsuario">
+
+                            <div class="invalid-feedback" style="display: block;" *ngIf="dataForm.get('passUsuario')?.touched && dataForm.get('passUsuario')?.errors?.['required']">
+                                Campo requerido
+                            </div>
+
+                            <div class="invalid-feedback" style="display: block;" *ngIf="dataForm.get('passUsuario')?.touched  && dataForm.get('passUsuario')?.errors?.['validadorPass']">
+                                La contraseña debe tener los siguientes parametros:
+                                <ul>
+                                    <li>Una letra mayuscula</li>
+                                    <li>Un caracter especial (*,@,.,$)</li>
+                                    <li>Minimo 8 caracteres</li>
+                                </ul>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <label for="" class="form-label">* Confirmar Contraseña</label>
+                            <input type="password" name="" id="" class="form-control" formControlName="passDos">
+                        </div>
+
+                        <div class="invalid-feedback" style="display: block;" *ngIf="dataForm.get('passDos')?.touched && dataForm.get('passDos')?.errors?.['required']">
+                            Campo requerido
+                        </div>
+
+                        <div class="invalid-feedback" style="display: block;" *ngIf="dataForm.get('passDos')?.touched && dataForm.errors?.['validarPassIguales']">
+                            Las contraseñas no coinciden
+                        </div>
+                    </div>
+
+                    <div class="contentBtn mt-5">
+                        <div class="row">
+                            <div class="col-md-12 d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="contentLogin">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title text-center">Login</h2>
+        <form [formGroup]="dataForm">
+          <div class="row">
+            <div class="col-md-12">
+              <label for="" class="form-label">Email:</label>
+              <input type="email" class="form-control" [ngClass]="{'is-invalid': dataForm.get('emailUsuario')?.errors?.['required'] && dataForm.get('emailUsuario')?.touched}"  id="emailValidacion" formControlName="emailUsuario">
+
+              <div class="invalid-feedback" style="display: block;"
+                *ngIf="dataForm.get('emailUsuario')?.touched && dataForm.get('emailUsuario')?.errors?.['required']">
+                * El email es requerido
+              </div>
+
+              <div class="invalid-feedback" style="display: block;"
+                *ngIf="dataForm.get('emailUsuario')?.errors?.['email']">
+                * Debe poner un email valido
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-md-12">
+              <label for="" class="form-label">Contraseña:</label>
+              <input type="password" class="form-control" id="passValidacion" formControlName="passUsuario">
+
+              <div class="invalid-feedback" style="display: block;"
+                *ngIf="dataForm.get('passUsuario')?.touched && dataForm.get('passUsuario')?.errors?.['validadorPass']">
+                * La contraseña es requerida y necesesita:
+                <ul>
+                  <li>una letra mayuscula</li>
+                  <li>minimo 8 caracteres</li>
+                  <li>un caracter especial</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-md-12">
+              <div class="contentBtn d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+              </div>
+            </div>
+            <div class="col-md-12 mt-3">
+              <div class="contentRegistroBtn d-flex justify-content-end">
+                <a [routerLink]="['/registro/registroUsuarios']">Registrarse</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
